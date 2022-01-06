@@ -31,20 +31,20 @@ jobs:
       
       # install python and dependencies
       - name: Set up Python 3.8.8
-          uses: actions/setup-python@v2
-          with:
-            python-version: 3.8.8
-            - name: Install dependencies
-              run: |
-                python -m pip install --upgrade pip
-                if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Unit Tests
-          run: |
-            python -m pytest
-            - name: black
-              run: |
-                black --line-length=79 --diff --check --verbose .
-            - name: flake8
-              run: |
-                flake8 . --count --statistics --select=E,F,W,C90 --ignore=N802,N803,N815,W503,F841
+        run: |
+          python -m pytest
+          - name: black
+            run: |
+              black --line-length=79 --diff --check --verbose .
+          - name: flake8
+            run: |
+              flake8 . --count --statistics --select=E,F,W,C90 --ignore=N802,N803,N815,W503,F841
