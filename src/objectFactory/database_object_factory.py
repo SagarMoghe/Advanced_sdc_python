@@ -7,7 +7,8 @@ class DatabaseFactory:
         self.object = None
 
     def get_mysql_database(self) -> CMySQLConnection:
-        """This method generates a database connection and returns to the caller."""
+        """This method generates a database connection and returns to the
+        caller."""
         if self.object is None:
             db = mysql.connector.connect(
                 host="127.0.0.1",
