@@ -14,4 +14,3 @@ class DatabaseFactory:
             )
             return db
         return self.object
-
