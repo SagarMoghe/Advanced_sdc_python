@@ -41,7 +41,7 @@ jobs:
 
       - name: Unit Tests
         run: |
-          python -m pytest
+          # python -m pytest
           - name: black
             run: |
               black --line-length=79 --diff --check --verbose .
