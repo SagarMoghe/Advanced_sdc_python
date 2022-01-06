@@ -40,10 +40,11 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Unit Tests
+        run: echo pytest
+
+      - name: black
         run: |
-          - name: black
-            run: |
-              black --line-length=79 --diff --check --verbose .
-          - name: flake8
-            run: |
-              flake8 . --count --statistics --select=E,F,W,C90 --ignore=N802,N803,N815,W503,F841
+          black --line-length=79 --diff --check --verbose .
+      - name: flake8
+        run: |
+          flake8 . --count --statistics --select=E,F,W,C90 --ignore=N802,N803,N815,W503,F841
