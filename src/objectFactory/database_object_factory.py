@@ -10,7 +10,10 @@ class DatabaseFactory:
         """This method generates a database connection and returns to the caller."""
         if self.object is None:
             db = mysql.connector.connect(
-                host="127.0.0.1", user="root", password="sagar", database="game"
+                host="127.0.0.1",
+                user="root",
+                password="sagar",
+                database="game",
             )
             return db
         return self.object
