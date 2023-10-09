@@ -38,6 +38,3 @@ class Mysql_Factory():
     def close_connection(self):
         if self.conn and self.conn.open:
             self.conn.close()
-
-
-
