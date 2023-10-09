@@ -4,5 +4,7 @@ class Player:
         self.name = name
         print(f'player {self.name} created with id {self.id}')
 
-
+    def set_name(self, name: str):
+        self.name = name
+        print(f"player with id {self.id} name updated to {self.name}")
 # Player("sagar")

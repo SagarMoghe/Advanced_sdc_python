@@ -18,6 +18,10 @@ class Mysql_Factory():
 
         self.conn = None
 
+    def __del__(self):
+        if self.conn and self.conn.open:
+            self.conn.close()
+
     def get_connection(self):
         if self.conn and self.conn.open:
             print('returned old object')
