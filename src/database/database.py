@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+from src.leagueObjectModel.player import Player
+from src.leagueObjectModel.league import League
+from src.leagueObjectModel.team import Team
 
 
 class DatabaseOperations(ABC):
@@ -6,7 +9,7 @@ class DatabaseOperations(ABC):
     operations"""
 
     @abstractmethod
-    def save_player(self, player) -> bool:
+    def save_player(self, player: type[Player]) -> bool:
         """This method will save the player object to the database"""
         raise NotImplementedError
 
@@ -20,10 +23,10 @@ class DatabaseOperations(ABC):
     #     """This method will save the player object to the database"""
     #     raise NotImplementedError
     #
-    # @abstractmethod
-    # def save_team(self, team) -> bool:
-    #     """This method will save the team object to the database"""
-    #     raise NotImplementedError
+    @abstractmethod
+    def save_team(self, team: type[Team]) -> bool:
+        """This method will save the team object to the database"""
+        raise NotImplementedError
     #
     # @abstractmethod
     # def save_division(self, division) -> bool:
@@ -34,10 +37,11 @@ class DatabaseOperations(ABC):
     #     """This method will save the conference object to the database"""
     #     raise NotImplementedError
     #
-    # @abstractmethod
-    # def save_league(self, league) -> bool:
-    #     """This method will save the league object to the database"""
-    #     raise NotImplementedError
+    @abstractmethod
+    def save_league(self, league: type(League)) -> bool:
+        """This method will save the league object to the database"""
+        raise NotImplementedError
+
     #
     # @abstractmethod
     # def update_player(self, player) -> bool:
@@ -54,7 +58,7 @@ class DatabaseOperations(ABC):
     #     raise NotImplementedError
     #
     # @abstractmethod
-    # def update_team(self, team) -> bool:
+    # def update_team(self, team: type[Team]) -> bool:
     #     """This method will modify the team object to the database"""
     #     raise NotImplementedError
     #
