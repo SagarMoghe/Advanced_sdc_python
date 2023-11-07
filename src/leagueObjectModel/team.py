@@ -1,5 +1,6 @@
 from src.database.database import DatabaseOperations
 
+
 class Team:
     def __init__(self, league_id: int, name: str):
         self.league_id = league_id
@@ -9,9 +10,8 @@ class Team:
         self.players = {}
 
     def save(self):
+        DatabaseOperations.save_team(self)
         for player in self.players.values():
             player.save()
-
-        DatabaseOperations.save_team(self)
 
 

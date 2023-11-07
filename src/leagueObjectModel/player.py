@@ -4,5 +4,4 @@ class Player:
         self.name = name
         print(f'player {self.name} created with id {self.id}')
 
-
 # Player("sagar")

@@ -12,7 +12,7 @@ class mysql_db(DatabaseOperations):
         # self.connection = Mysql_Factory('config.env')
         pass
 
-    def save_player(self, player: type[Player]) -> bool:
+    def save_player(self, player: type(Player)) -> bool:
         print(f'player {player.name} saved with id {player.id}')
         return True
 

@@ -3,7 +3,6 @@ from src.leagueObjectModel.team import Team
 from src.database.database import DatabaseOperations
 
 
-
 class League:
     def __init__(self, name: str):
         self.id = id(self)
@@ -31,7 +30,7 @@ class League:
             raise KeyError(f"league does not contain the team with id {team_id}")
 
     def save(self):
+        DatabaseOperations().save_league(league=self)
         for team in self.teams.values():
             team.save()
-        DatabaseOperations().save_league(league=self)
 

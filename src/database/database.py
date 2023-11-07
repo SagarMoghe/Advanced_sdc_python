@@ -27,6 +27,7 @@ class DatabaseOperations(ABC):
     def save_team(self, team: type[Team]) -> bool:
         """This method will save the team object to the database"""
         raise NotImplementedError
+
     #
     # @abstractmethod
     # def save_division(self, division) -> bool:
